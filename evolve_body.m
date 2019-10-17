@@ -29,7 +29,7 @@ function [t, r, v] = evolve_body(tmax, level, r_core_init, v_core_init, m)
     a = nbodyaccn(m, r(:,:,1));
     r(:,:,2) = r(:,:,1) + dt * v(:,:,1) + dt^2 * (1/2) * a;
 
-    %evolve body
+    %evolve body MOST PROUD OF THIS LINE YAY BECAUSE ITS SO POWERFUL AND DRIVES THE ENTIRE PROGRAM!
     for n = 2 : (nt-1)
         a = nbodyaccn(m, r(:,:,n));
         r(:,:,n+1) = 2*r(:,:,n) - r(:,:,n-1) + (dt^2) * a;
